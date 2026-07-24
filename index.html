@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial sacle=1.0">
+    <title>Generator Undangan</title>
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+
+    <div class="container">
+
+      <h1> Generator Undangan</h1>
+
+    <form>
+
+      <label>Nama Tamu</label>
+      <br>
+
+      <input 
+        type="text"
+        id=guestName
+        placeholder="Masukkan Nama Tamu">
+
+      <br>
+
+      <label>Pilih Website</label>
+
+<div class="radio-group">
+
+    <div class="radio-option">
+        <input type="radio"
+               id="websiteWanita"
+               name="website"
+               value="laradeza">
+
+        <label for="websiteWanita">
+            Lara & Deza
+        </label>
+    </div>
+
+    <div class="radio-option">
+        <input type="radio"
+               id="websitePria"
+               name="website"
+               value="dezalara">
+
+        <label for="websitePria">
+            Deza & Lara
+        </label>
+    </div>
+
+</div>
+
+      <br>
+
+      <button type="button" id="generateBtn">
+        Generate
+      </button>
+
+    </form>
+      
+      <h2>Hasil URL</h2>
+
+      <p id="resultUrl">
+        Hasil url akan muncul disini
+      </p>
+
+      <button type="button" id="copyBtn">
+        Copy Link
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

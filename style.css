@@ -1,0 +1,147 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================
+   BODY
+========================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================
+   JUDUL
+========================== */
+
+h1 {
+    text-align: center;
+    color: #2563eb;
+    margin-bottom: 30px;
+}
+
+/* ==========================
+   FORM
+========================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================
+   LABEL
+========================== */
+
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+/* ==========================
+   INPUT TEXT
+========================== */
+
+input[type="text"] {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #2563eb;
+}
+
+/* ==========================
+   RADIO
+========================== */
+
+.radio-group {
+    margin-bottom: 20px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.radio-option label {
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+button {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* ==========================
+   HASIL URL
+========================== */
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    color: #2563eb;
+}
+
+#resultUrl {
+    background: #f8fafc;
+    border: 1px solid #dbeafe;
+    padding: 15px;
+    border-radius: 8px;
+    word-break: break-word;
+    color: #374151;
+}
+
+#copyBtn{
+    width:100%;
+    margin-top:15px;
+}
