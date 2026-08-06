@@ -33,7 +33,13 @@ generateBtn.addEventListener("click", function () {
     const name = guestName.value.trim();
 
     // Cek website yang dipilih
-    const selectedWebsite = document.querySelector('input[name="website"]:checked');
+const selectedWebsite =
+document.getElementById("websiteSelect");
+
+if (!selectedWebsite.value) {
+    alert("Silakan pilih website.");
+    return;
+}
 
     // Validasi nama
     if (name === "") {
@@ -50,15 +56,25 @@ generateBtn.addEventListener("click", function () {
     // Tentukan URL dasar
     let baseUrl = "";
 
-    if (selectedWebsite.value === "laradeza") {
+switch (selectedWebsite.value) {
 
+    case "laradeza":
         baseUrl = "https://laradeza-wedding.vercel.app/";
+        break;
 
-    } else {
-
+    case "dezalara":
         baseUrl = "https://dezalara-wedding.vercel.app/";
+        break;
 
-    }
+    case "ekaarian":
+        baseUrl = "https://ekaarian-wedding.vercel.app/";
+        break;
+
+    default:
+        alert("Website tidak ditemukan.");
+        return;
+
+}
 
     // Encode nama tamu
     const encodedName = encodeURIComponent(name);
