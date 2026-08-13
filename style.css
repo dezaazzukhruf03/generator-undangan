@@ -141,9 +141,34 @@ h2 {
     color: #374151;
 }
 
-#copyBtn{
-    width:100%;
-    margin-top:15px;
+/* ==========================
+   AKSI: COPY & BUKA LINK
+========================== */
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-buttons button {
+    flex: 1;
+}
+
+/* ==========================
+   TOMBOL RESET
+========================== */
+
+#resetBtn {
+    width: 100%;
+    margin-top: 10px;
+    background: #ffffff;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+#resetBtn:hover {
+    background: #f3f4f6;
 }
 
 select{
