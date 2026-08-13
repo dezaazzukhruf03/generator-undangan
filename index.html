@@ -2,7 +2,7 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial sacle=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generator Undangan</title>
 
     <link rel="stylesheet" href="style.css">
@@ -12,21 +12,22 @@
 
     <div class="container">
 
-      <h1> Generator Undangan</h1>
+      <p class="subtitle">Lapak Digital Deza</p>
+      <h1>Generator Undangan</h1>
 
-    <form>
+    <form id="generatorForm">
 
-      <label>Nama Tamu</label>
+      <label for="guestName">Nama Tamu</label>
       <br>
 
       <input 
         type="text"
-        id=guestName
+        id="guestName"
         placeholder="Masukkan Nama Tamu">
 
       <br>
 
-      <label>Pilih Website</label>
+      <label for="websiteSelect">Pilih Website</label>
 
 <select id="websiteSelect">
 
@@ -54,7 +55,7 @@
 
       <br>
 
-      <button type="button" id="generateBtn">
+      <button type="submit" id="generateBtn" class="btn-primary">
         Generate
       </button>
 
@@ -66,12 +67,14 @@
         Hasil url akan muncul disini
       </p>
 
+      <p id="saveStatus" class="save-status"></p>
+
       <div class="action-buttons">
-        <button type="button" id="copyBtn">
+        <button type="button" id="copyBtn" class="btn-secondary">
           Copy Link
         </button>
 
-        <button type="button" id="openBtn">
+        <button type="button" id="openBtn" class="btn-secondary">
           Buka Link
         </button>
       </div>
@@ -81,6 +84,10 @@
       </button>
 
     </div>
+
+    <footer class="site-footer">
+      &copy; 2026 Lapak Digital Deza
+    </footer>
 
     <script src="script.js"></script>
   </body>

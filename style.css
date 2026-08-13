@@ -16,6 +16,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f3f5f9;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -43,6 +44,30 @@ h1 {
     text-align: center;
     color: #2563eb;
     margin-bottom: 30px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 14px;
+}
+
+.subtitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 3px;
+    border-radius: 2px;
+    background: #2563eb;
 }
 
 /* ==========================
@@ -75,6 +100,7 @@ input[type="text"] {
     font-size: 16px;
     margin-bottom: 20px;
     outline: none;
+    width: 100%;
 }
 
 input[type="text"]:focus {
@@ -110,16 +136,39 @@ button {
     padding: 14px;
     border: none;
     border-radius: 8px;
-    background: #2563eb;
-    color: white;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
+    width: 100%;
 }
 
-button:hover {
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Aksi utama: Generate */
+
+.btn-primary {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.btn-primary:hover:not(:disabled) {
     background: #1d4ed8;
+}
+
+/* Aksi sekunder: Copy Link, Buka Link, Reset */
+
+.btn-secondary {
+    background: #ffffff;
+    color: #2563eb;
+    border: 1.5px solid #2563eb;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #eff6ff;
 }
 
 /* ==========================
@@ -142,6 +191,24 @@ h2 {
 }
 
 /* ==========================
+   STATUS SIMPAN
+========================== */
+
+.save-status {
+    font-size: 13px;
+    margin-top: 8px;
+    min-height: 16px;
+}
+
+.save-status--success {
+    color: #16a34a;
+}
+
+.save-status--error {
+    color: #dc2626;
+}
+
+/* ==========================
    AKSI: COPY & BUKA LINK
 ========================== */
 
@@ -153,6 +220,7 @@ h2 {
 
 .action-buttons button {
     flex: 1;
+    min-width: 0;
 }
 
 /* ==========================
@@ -160,29 +228,56 @@ h2 {
 ========================== */
 
 #resetBtn {
-    width: 100%;
     margin-top: 10px;
-    background: #ffffff;
-    color: #374151;
+}
+
+/* ==========================
+   SELECT
+========================== */
+
+select {
+    width: 100%;
+    padding: 12px;
     border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
-#resetBtn:hover {
-    background: #f3f4f6;
+select:focus {
+    outline: none;
+    border-color: #2563eb;
 }
 
-select{
-    width:100%;
-    padding:12px;
-    border:1px solid #d1d5db;
-    border-radius:8px;
-    font-size:16px;
-    background:#fff;
-    cursor:pointer;
-    margin-bottom:20px;
+/* ==========================
+   FOOTER
+========================== */
+
+.site-footer {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 13px;
+    margin-top: 20px;
 }
 
-select:focus{
-    outline:none;
-    border-color:#2563eb;
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 380px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+
 }
