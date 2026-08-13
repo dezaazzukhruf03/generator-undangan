@@ -62,10 +62,6 @@ switch (selectedWebsite.value) {
         baseUrl = "https://laradeza-wedding.vercel.app/";
         break;
 
-    case "dezalara":
-        baseUrl = "https://dezalara-wedding.vercel.app/";
-        break;
-
     case "ekaarian":
         baseUrl = "https://ekaarian-wedding.vercel.app/";
         break;
