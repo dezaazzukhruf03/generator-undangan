@@ -70,6 +70,10 @@ switch (selectedWebsite.value) {
         baseUrl = "https://ekaarian-wedding.vercel.app/";
         break;
 
+    case "putrirama":
+        baseUrl = "https://putrirama-wedding.vercel.app/";
+        break;
+
     default:
         alert("Website tidak ditemukan.");
         return;
