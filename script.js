@@ -60,6 +60,10 @@ generatorForm.addEventListener("submit", function (e) {
             baseUrl = "https://putrirama-wedding.vercel.app/";
             break;
 
+        case "softred001":
+            baseUrl = "https://ldd-softred001.vercel.app/";
+            break;
+
         default:
             alert("Website tidak ditemukan.");
             return;
