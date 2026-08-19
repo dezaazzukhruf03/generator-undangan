@@ -77,7 +77,7 @@ generatorForm.addEventListener("submit", function (e) {
 
     // Nonaktifkan tombol generate selagi menyimpan data (cegah klik dobel)
     generateBtn.disabled = true;
-    generateBtn.textContent = "Menyimpan...";
+    generateBtn.textContent = "Berhasil!";
     saveStatus.textContent = "";
     saveStatus.className = "save-status";
 
@@ -94,21 +94,6 @@ generatorForm.addEventListener("submit", function (e) {
             url: finalUrl
 
         })
-
-    })
-    .then(response => response.json())
-    .then(data => {
-
-        console.log("Berhasil disimpan");
-        saveStatus.textContent = "Data Berhasil di Generate.";
-        saveStatus.className = "save-status save-status--success";
-
-    })
-    .catch(error => {
-
-        console.error(error);
-        saveStatus.textContent = "Gagal menyimpan data. Link tetap bisa dipakai, coba generate ulang jika perlu.";
-        saveStatus.className = "save-status save-status--error";
 
     })
     .finally(() => {
