@@ -100,7 +100,7 @@ generatorForm.addEventListener("submit", function (e) {
     .then(data => {
 
         console.log("Berhasil disimpan");
-        saveStatus.textContent = "Data berhasil disimpan.";
+        saveStatus.textContent = "Data Berhasil di Generate.";
         saveStatus.className = "save-status save-status--success";
 
     })
