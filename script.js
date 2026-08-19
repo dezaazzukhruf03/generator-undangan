@@ -48,10 +48,6 @@ generatorForm.addEventListener("submit", function (e) {
 
     switch (websiteSelect.value) {
 
-        case "laradeza":
-            baseUrl = "https://laradeza-wedding.vercel.app/";
-            break;
-
         case "ekaarian":
             baseUrl = "https://ekaarian-wedding.vercel.app/";
             break;
