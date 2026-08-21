@@ -44,12 +44,13 @@ h1 {
     text-align: center;
     color: #2563eb;
     margin-bottom: 30px;
+    font-size: 18px;
 }
 
 .subtitle {
     text-align: center;
     color: #2563eb;
-    font-size: 12px;
+    font-size: 25px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -176,6 +177,7 @@ button:disabled {
 ========================== */
 
 h2 {
+    font-size: 18px;
     margin-top: 30px;
     margin-bottom: 12px;
     color: #2563eb;
