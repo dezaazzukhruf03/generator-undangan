@@ -12,80 +12,110 @@
 
     <div class="container">
 
-      <p class="subtitle">Lapak Digital Deza</p>
-      <h1>Generator Undangan</h1>
-
-    <form id="generatorForm">
-
-      <label for="guestName">Nama Tamu</label>
-      <br>
-
-      <input 
-        type="text"
-        id="guestName"
-        placeholder="Masukkan Nama Tamu">
-
-      <br>
-
-      <label for="websiteSelect">Pilih Website</label>
-
-<select id="websiteSelect">
-
-    <option value="" selected disabled>
-        -- Pilih Website --
-    </option>
-
-    <option value="laradeza">
-        Lara & Deza (24 Oktober 2026)
-    </option>
-
-    <option value="dezalara">
-        Deza & Lara (01 November 2026)
-    </option>
-
-    <option value="ekaarian">
-        Eka & Arian (04 September 2026)
-    </option>
-
-    <option value="putrirama">
-        Putri & Rama (23 Agustus 2026)
-    </option>
-
-    <option value="softred001">
-        Sampel LDD SoftRed 001
-    </option>
-
-</select>
-
-      <br>
-
-      <button type="submit" id="generateBtn" class="btn-primary">
-        Generate
-      </button>
-
-    </form>
-      
-      <h2>Hasil URL</h2>
-
-      <p id="resultUrl">
-        Hasil url akan muncul disini
-      </p>
-
-      <p id="saveStatus" class="save-status"></p>
-
-      <div class="action-buttons">
-        <button type="button" id="copyBtn" class="btn-secondary">
-          Copy Link
-        </button>
-
-        <button type="button" id="openBtn" class="btn-secondary">
-          Buka Link
-        </button>
+      <!-- Ditampilkan kalau tidak ada ?client= yang valid dan tidak ada ?admin= yang benar -->
+      <div id="invalidState" style="display:none;">
+        <p class="subtitle">Lapak Digital Deza</p>
+        <h1>Link Tidak Valid</h1>
+        <p class="invalid-message">
+          Silakan hubungi administrator LDD.
+          <br>WhatsApp: <a href="https://wa.me/6283180009427" target="_blank">0831-8000-9427</a>
+        </p>
       </div>
 
-      <button type="button" id="resetBtn" class="btn-secondary">
-        Reset
-      </button>
+      <!-- Ditampilkan kalau ?client= valid ATAU ?admin= benar -->
+      <div id="appState" style="display:none;">
+
+        <p class="subtitle">Lapak Digital Deza</p>
+        <h1>Generator Undangan</h1>
+
+      <form id="generatorForm">
+
+        <label for="guestName">Nama Tamu</label>
+        <br>
+
+        <input 
+          type="text"
+          id="guestName"
+          placeholder="Masukkan Nama Tamu">
+
+        <br>
+
+        <!-- Mode admin: dropdown pilih website -->
+        <div id="websiteFieldNormal">
+
+          <label for="websiteSelect">Pilih Website</label>
+
+          <select id="websiteSelect">
+
+              <option value="" selected disabled>
+                  -- Pilih Website --
+              </option>
+
+              <option value="laradeza">
+                  Lara & Deza (24 Oktober 2026)
+              </option>
+
+              <option value="dezalara">
+                  Deza & Lara (01 November 2026)
+              </option>
+
+              <option value="ekaarian">
+                  Eka & Arian (04 September 2026)
+              </option>
+
+              <option value="putrirama">
+                  Putri & Rama (23 Agustus 2026)
+              </option>
+
+              <option value="softred001">
+                  Sampel LDD SoftRed 001
+              </option>
+
+          </select>
+
+        </div>
+
+        <!-- Mode client: teks statis, dropdown disembunyikan -->
+        <div id="websiteFieldLocked" style="display:none;">
+          <label>Website</label>
+          <p id="lockedWebsiteText" class="locked-website"></p>
+        </div>
+
+        <br>
+
+        <button type="submit" id="generateBtn" class="btn-primary">
+          Generate
+        </button>
+
+      </form>
+
+        <h2>Hasil URL</h2>
+
+        <p id="resultUrl">
+          Hasil url akan muncul disini
+        </p>
+
+        <p id="saveStatus" class="save-status"></p>
+
+        <div class="action-buttons">
+          <button type="button" id="copyBtn" class="btn-secondary">
+            Copy Link
+          </button>
+
+          <button type="button" id="openBtn" class="btn-secondary">
+            Buka Link
+          </button>
+        </div>
+
+        <button type="button" id="resetBtn" class="btn-secondary">
+          Reset
+        </button>
+
+        <a href="https://wa.me/6283180009427" target="_blank" id="whatsappBtn" class="btn-primary btn-whatsapp">
+          Hubungi Admin (WhatsApp)
+        </a>
+
+      </div>
 
     </div>
 

@@ -232,6 +232,43 @@ h2 {
 }
 
 /* ==========================
+   TOMBOL WHATSAPP
+========================== */
+
+.btn-whatsapp {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* ==========================
+   INVALID STATE
+========================== */
+
+.invalid-message {
+    color: #6b7280;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* ==========================
+   WEBSITE TERKUNCI (MODE CLIENT)
+========================== */
+
+.locked-website {
+    padding: 12px;
+    border: 1px solid #dbeafe;
+    background: #eff6ff;
+    border-radius: 8px;
+    color: #1d4ed8;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* ==========================
    SELECT
 ========================== */
 
