@@ -72,6 +72,80 @@ h1 {
 }
 
 /* ==========================
+   CARA MENGGUNAKAN
+========================== */
+
+.usage-steps {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+}
+
+.usage-steps summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #1d4ed8;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.usage-steps summary::-webkit-details-marker {
+    display: none;
+}
+
+.usage-steps[open] summary {
+    margin-bottom: 12px;
+}
+
+.usage-steps ol {
+    list-style: none;
+    counter-reset: usage-step;
+    padding-left: 0;
+}
+
+.usage-steps li {
+    counter-increment: usage-step;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.5;
+}
+
+.usage-steps li:last-child {
+    margin-bottom: 0;
+}
+
+.usage-steps li::before {
+    content: counter(usage-step);
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.usage-example {
+    display: block;
+    margin-top: 4px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+/* ==========================
    FORM
 ========================== */
 
@@ -294,7 +368,8 @@ h2 {
     flex-shrink: 0;
 }
 
-.referral-promo[open] .promo-chevron {
+.referral-promo[open] .promo-chevron,
+.usage-steps[open] .promo-chevron {
     transform: rotate(180deg);
 }
 
