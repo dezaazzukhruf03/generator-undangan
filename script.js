@@ -10,12 +10,12 @@ const API_URL = "https://script.google.com/macros/s/AKfycbzxGY9MJef2If5Je1L6nW0E
 
 // Data website (dipakai baik oleh mode admin maupun mode client)
 const WEBSITES = {
-    laradeza:   { label: "Lara & Deza (24 Oktober 2026)",   baseUrl: "..." },
-    dezalara:   { label: "Deza & Lara (01 November 2026)",  baseUrl: "..." },
-    ekaarian:   { label: "Eka & Arian (04 September 2026)", baseUrl: "https://ekaarian-wedding.vercel.app/" },
-    putrirama:  { label: "Putri & Rama (23 Agustus 2026)",  baseUrl: "https://putrirama-wedding.vercel.app/" },
-    gitaabid:   { label: "Gita & Abid (11 September 2026)", baseUrl: "https://gitaabid1109-wedding.vercel.app/" },
-    softred001: { label: "Sampel LDD SoftRed 001",          baseUrl: "https://ldd-softred001.vercel.app/" },
+    laradeza:   { label: "Lara & Deza (24 Oktober 2026)",   baseUrl: "...", couple: "Lara & Deza" },
+    dezalara:   { label: "Deza & Lara (01 November 2026)",  baseUrl: "...", couple: "Deza & Lara" },
+    ekaarian:   { label: "Eka & Arian (04 September 2026)", baseUrl: "https://ekaarian-wedding.vercel.app/", couple: "Eka & Arian" },
+    putrirama:  { label: "Putri & Rama (23 Agustus 2026)",  baseUrl: "https://putrirama-wedding.vercel.app/", couple: "Putri & Rama" },
+    gitaabid:   { label: "Gita & Abid (11 September 2026)", baseUrl: "https://gitaabid1109-wedding.vercel.app/", couple: "Gita & Abid" },
+    softred001: { label: "Sampel LDD SoftRed 001",          baseUrl: "https://ldd-softred001.vercel.app/", couple: "Sampel LDD" },
 };
 
 // Pemetaan slug link client (?client=...) ke id website di atas
@@ -50,9 +50,45 @@ const websiteFieldNormal = document.getElementById("websiteFieldNormal");
 const websiteFieldLocked = document.getElementById("websiteFieldLocked");
 const lockedWebsiteText = document.getElementById("lockedWebsiteText");
 
+const messagePreview = document.getElementById("messagePreview");
+const copyMessageBtn = document.getElementById("copyMessageBtn");
+
 // Teks default saat belum ada URL yang digenerate
 const DEFAULT_RESULT_TEXT = "Hasil url akan muncul disini";
 const DEFAULT_COPY_TEXT = "Copy Link";
+const DEFAULT_MESSAGE_TEXT = "Pesan undangan akan muncul disini setelah Generate";
+const DEFAULT_COPY_MESSAGE_TEXT = "Copy Pesan";
+
+// ===============================
+// TEMPLATE PESAN UNDANGAN (GAYA WHATSAPP)
+// ===============================
+
+function buildInvitationMessage(guestNameValue, coupleName, url) {
+
+    return `Kepada Yth.
+Bapak/Ibu/Saudara/i
+*${guestNameValue}*
+
+Assalamu'alaikum Warahmatullahi Wabarakatuh
+
+Tanpa mengurangi rasa hormat, melalui pesan ini kami ingin membagikan kabar bahagia sekaligus mengundang Bapak/Ibu/Saudara/i untuk menjadi bagian dari momen berharga pernikahan kami:
+
+✨ *${coupleName}* ✨
+
+Silakan klik tautan di bawah ini untuk melihat detail lokasi dan rangkaian acara:
+🔗 ${url}
+
+NB: Buka menggunakan Google Chrome untuk pengalaman visual terbaik.
+
+Ungkapan terima kasih yang tulus kami sampaikan atas doa restu dan kehadiran Bapak/Ibu/Saudara/i sekalian.
+
+Wassalamu'alaikum Warahmatullahi Wabarakatuh
+
+Terima Kasih,
+Hormat kami,
+*Keluarga Besar ${coupleName}*`;
+
+}
 
 // ===============================
 // TENTUKAN MODE SAAT HALAMAN DIBUKA
@@ -144,6 +180,9 @@ generatorForm.addEventListener("submit", function (e) {
     // Tampilkan hasil URL segera
     resultUrl.textContent = finalUrl;
 
+    // Buat & tampilkan pesan undangan siap kirim
+    messagePreview.textContent = buildInvitationMessage(name, website.couple, finalUrl);
+
     // Nonaktifkan tombol generate selagi menyimpan data (cegah klik dobel)
     generateBtn.disabled = true;
     generateBtn.textContent = "Berhasil!";
@@ -204,6 +243,35 @@ copyBtn.addEventListener("click", function () {
 });
 
 // ===============================
+// SAAT TOMBOL COPY PESAN DIKLIK
+// ===============================
+
+copyMessageBtn.addEventListener("click", function () {
+
+    const message = messagePreview.textContent.trim();
+
+    if (message === DEFAULT_MESSAGE_TEXT) {
+        alert("Silakan generate URL terlebih dahulu.");
+        return;
+    }
+
+    navigator.clipboard.writeText(message).then(() => {
+
+        copyMessageBtn.textContent = "Tersalin!";
+
+        setTimeout(() => {
+            copyMessageBtn.textContent = DEFAULT_COPY_MESSAGE_TEXT;
+        }, 1500);
+
+    }).catch(() => {
+
+        alert("Gagal menyalin pesan.");
+
+    });
+
+});
+
+// ===============================
 // SAAT TOMBOL BUKA LINK DIKLIK
 // ===============================
 
@@ -233,8 +301,10 @@ resetBtn.addEventListener("click", function () {
     }
 
     resultUrl.textContent = DEFAULT_RESULT_TEXT;
+    messagePreview.textContent = DEFAULT_MESSAGE_TEXT;
     saveStatus.textContent = "";
     saveStatus.className = "save-status";
     copyBtn.textContent = DEFAULT_COPY_TEXT;
+    copyMessageBtn.textContent = DEFAULT_COPY_MESSAGE_TEXT;
 
 });

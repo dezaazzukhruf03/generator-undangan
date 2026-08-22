@@ -267,6 +267,26 @@ h2 {
 }
 
 /* ==========================
+   PESAN UNDANGAN
+========================== */
+
+.message-preview {
+    background: #f8fafc;
+    border: 1px solid #dbeafe;
+    padding: 15px;
+    border-radius: 8px;
+    color: #374151;
+    white-space: pre-line;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#copyMessageBtn {
+    margin-bottom: 10px;
+}
+
+/* ==========================
    STATUS SIMPAN
 ========================== */
 
