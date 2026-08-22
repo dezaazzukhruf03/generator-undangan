@@ -261,6 +261,78 @@ h2 {
 }
 
 /* ==========================
+   PROMO REFERRAL / MITRA
+========================== */
+
+.referral-promo {
+    margin-top: 10px;
+    border: 1.5px solid #dbeafe;
+    border-radius: 8px;
+    padding: 12px 14px;
+    background: #f8fafc;
+}
+
+.referral-promo summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #2563eb;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.referral-promo summary::-webkit-details-marker {
+    display: none;
+}
+
+.promo-chevron {
+    font-size: 14px;
+    color: #2563eb;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.referral-promo[open] .promo-chevron {
+    transform: rotate(180deg);
+}
+
+.referral-promo p,
+.referral-promo ul {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.referral-promo ul {
+    padding-left: 20px;
+}
+
+.referral-promo li {
+    margin-bottom: 6px;
+}
+
+.promo-program {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px dashed #dbeafe;
+}
+
+.promo-program h4 {
+    color: #1d4ed8;
+    font-size: 15px;
+    margin-top: 0;
+}
+
+.promo-note {
+    font-size: 12px !important;
+    color: #6b7280 !important;
+    font-style: italic;
+}
+
+/* ==========================
    INVALID STATE
 ========================== */
 
