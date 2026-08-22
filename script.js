@@ -14,6 +14,7 @@ const WEBSITES = {
     dezalara:   { label: "Deza & Lara (01 November 2026)",  baseUrl: "..." },
     ekaarian:   { label: "Eka & Arian (04 September 2026)", baseUrl: "https://ekaarian-wedding.vercel.app/" },
     putrirama:  { label: "Putri & Rama (23 Agustus 2026)",  baseUrl: "https://putrirama-wedding.vercel.app/" },
+    gitaabid:   { label: "Gita & Abid (11 September 2026)", baseUrl: "https://gitaabid1109-wedding.vercel.app/" },
     softred001: { label: "Sampel LDD SoftRed 001",          baseUrl: "https://ldd-softred001.vercel.app/" },
 };
 
@@ -23,6 +24,7 @@ const CLIENT_SLUGS = {
     "dezalara!011126":  "dezalara",
     "ekaarian!040926":  "ekaarian",
     "putrirama!230826": "putrirama",
+    "gitaabid!110926": "gitaabid",
 };
 
 // Kunci rahasia untuk mode admin (?admin=...)
